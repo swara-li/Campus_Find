@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Find | Lost & Found Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Campus Find</h1>
+        <p>College Lost & Found Portal</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Lost something? Found something?</h2>
+            <p>Help reunite lost belongings with their owners.</p>
+        </section>
+
+        <section class="report-section">
+            <h2>Submit a Lost or Found Report</h2>
+
+            <form id="reportForm">
+
+                <label for="item_name">Item Name</label>
+                <input type="text" id="item_name" required
+                       placeholder="Example: Blue Water Bottle">
+
+                <label for="report_type">Report Type</label>
+                <select id="report_type" required>
+                    <option value="">Select report type</option>
+                    <option value="Lost">Lost</option>
+                    <option value="Found">Found</option>
+                </select>
+
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="">Select category</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Books">Books</option>
+                    <option value="ID Cards">ID Cards</option>
+                    <option value="Bags">Bags</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="description">Description</label>
+                <textarea id="description"
+                          placeholder="Describe the item..."></textarea>
+
+                <label for="location">Campus Location</label>
+                <input type="text" id="location" required
+                       placeholder="Example: College Library">
+
+                <label for="contact">Contact Information</label>
+                <input type="text" id="contact" required
+                       placeholder="Enter a safe contact method">
+
+                <button type="submit">Submit Report</button>
+
+            </form>
+
+            <p id="formMessage"></p>
+        </section>
+
+        <section class="reports-section">
+            <h2>Recent Lost & Found Reports</h2>
+
+            <input type="search" id="searchInput"
+                   placeholder="Search by item, category or location">
+
+            <select id="filterType">
+                <option value="">All Reports</option>
+                <option value="Lost">Lost Items</option>
+                <option value="Found">Found Items</option>
+            </select>
+
+            <div id="reportsContainer">
+                <p>Loading reports...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Campus Find | Helping students find their belongings</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

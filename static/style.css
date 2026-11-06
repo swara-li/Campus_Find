@@ -1,0 +1,169 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fc;
+    color: #26334a;
+    line-height: 1.6;
+}
+
+.header {
+    background: linear-gradient(135deg, #173b70, #2876bd);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome h2 {
+    color: #173b70;
+    font-size: 26px;
+}
+
+.welcome p {
+    color: #667085;
+}
+
+.report-section,
+.reports-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.report-section h2,
+.reports-section h2 {
+    color: #173b70;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5dce8;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2876bd;
+}
+
+button {
+    background: #2165a5;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #173b70;
+}
+
+#formMessage {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+#reportsContainer {
+    margin-top: 20px;
+}
+
+.report-card {
+    border: 1px solid #e0e6ef;
+    border-left: 5px solid #2876bd;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #fbfcff;
+}
+
+.report-card h3 {
+    color: #173b70;
+    margin-bottom: 8px;
+}
+
+.report-card p {
+    margin: 5px 0;
+    overflow-wrap: anywhere;
+}
+
+.report-card button {
+    background: #21845b;
+    font-size: 14px;
+}
+
+.report-card button:hover {
+    background: #176442;
+}
+
+footer {
+    background: #173b70;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 35px;
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 29px;
+    }
+
+    .welcome h2 {
+        font-size: 22px;
+    }
+
+    .report-section,
+    .reports-section {
+        padding: 18px;
+    }
+}
