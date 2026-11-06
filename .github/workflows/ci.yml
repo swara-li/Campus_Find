@@ -20,8 +20,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Flask
-        run: pip install Flask
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
 
       - name: Check Python syntax
         run: python -m py_compile app.py
