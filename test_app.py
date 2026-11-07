@@ -57,6 +57,44 @@ class CampusFindTests(unittest.TestCase):
 
         self.assertEqual(response.status_code, 400)
 
+    def test_search_reports(self):
+        self.client.post("/api/reports", json={
+            "item_name": "Blue Notebook",
+            "report_type": "Lost",
+            "category": "Stationery",
+            "location": "Library",
+            "contact": "test@example.com"
+        })
+
+        response = self.client.get("/api/reports?q=Notebook")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json), 1)
+        self.assertEqual(response.json[0]["item_name"], "Blue Notebook")
+
+    def test_filter_reports(self):
+        self.client.post("/api/reports", json={
+            "item_name": "Black Bag",
+            "report_type": "Lost",
+            "category": "Bags",
+            "location": "Classroom",
+            "contact": "test@example.com"
+        })
+
+        self.client.post("/api/reports", json={
+            "item_name": "Blue Bottle",
+            "report_type": "Found",
+            "category": "Bottle",
+            "location": "Library",
+            "contact": "test@example.com"
+        })
+
+        response = self.client.get("/api/reports?type=Found")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json), 1)
+        self.assertEqual(response.json[0]["report_type"], "Found")
+
     def test_resolve_report(self):
         response = self.client.post("/api/reports", json={
             "item_name": "Test Bag",
