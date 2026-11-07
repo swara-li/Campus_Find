@@ -92,3 +92,12 @@ The application is developed and tested locally. Cloud deployment is planned.
 ## Repository
 
 [View Campus Find on GitHub](https://github.com/swara-li/Campus_Find)
+
+## Future Improvements
+
+- Student registration and login system
+- Image uploads for lost and found items
+- Admin dashboard for managing reports
+- Improved security and input validation
+- Cloud database integration
+- Deployment on AWS Elastic Beanstalk
