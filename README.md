@@ -1,3 +1,5 @@
+![Campus Find CI](https://github.com/swara-li/Campus_Find/actions/workflows/ci.yml/badge.svg)
+
 # Campus Find – College Lost and Found Portal
 
 Campus Find is a web-based Lost and Found portal designed to help college students report lost belongings and find items reported by others.
