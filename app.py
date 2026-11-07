@@ -75,7 +75,14 @@ def get_reports():
     reports = connection.execute(query, values).fetchall()
     connection.close()
 
-    return jsonify([dict(report) for report in reports])
+    public_reports = []
+
+    for report in reports:
+        report_data = dict(report)
+        report_data.pop("contact", None)
+        public_reports.append(report_data)
+
+    return jsonify(public_reports)
 
 
 @app.route("/api/reports", methods=["POST"])
@@ -146,4 +153,4 @@ initialize_database()
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
+

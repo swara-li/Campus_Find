@@ -86,7 +86,7 @@ async function loadReports() {
                 `Category: ${report.category}`,
                 `Description: ${report.description || "Not provided"}`,
                 `Location: ${report.location}`,
-                `Contact: ${report.contact}`
+                "Contact details are kept private."
             ];
 
             card.appendChild(heading);

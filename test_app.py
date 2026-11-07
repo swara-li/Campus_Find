@@ -94,7 +94,21 @@ class CampusFindTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.json), 1)
         self.assertEqual(response.json[0]["report_type"], "Found")
+    def test_contact_is_not_public(self):
+        self.client.post("/api/reports", json={
+            "item_name": "Blue Notebook",
+            "report_type": "Lost",
+            "category": "Stationery",
+            "location": "Library",
+            "contact": "private@example.com"
+        })
 
+        response = self.client.get("/api/reports")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json), 1)
+        self.assertNotIn("contact", response.json[0])
+        
     def test_resolve_report(self):
         response = self.client.post("/api/reports", json={
             "item_name": "Test Bag",
