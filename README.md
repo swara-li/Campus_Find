@@ -1,3 +1,7 @@
+## Live Demo
+
+[Open Campus Find](http://campusfind-env.eba-vmacfgmy.ap-south-1.elasticbeanstalk.com/)
+
 ![Campus Find CI](https://github.com/swara-li/Campus_Find/actions/workflows/ci.yml/badge.svg)
 
 # Campus Find – College Lost and Found Portal
